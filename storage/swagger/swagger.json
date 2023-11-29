@@ -1,0 +1,402 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Laravel",
+        "description": "Documentation for the Application API",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://api-rest.test/api",
+            "description": "Laravel Server #1"
+        }
+    ],
+    "paths": {
+        "/user": {
+            "get": {
+                "summary": "",
+                "description": "",
+                "deprecated": false,
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "401": {
+                        "description": "(Unauthorized) Invalid or missing Access Token"
+                    }
+                },
+                "security": [
+                    {
+                        "OAuth2": [
+                            "sanctum"
+                        ],
+                        "bearerAuth": []
+                    }
+                ],
+                "tags": [
+                    "user"
+                ]
+            }
+        },
+        "/v1/apiusers": {
+            "get": {
+                "summary": "Returns all users",
+                "description": "",
+                "deprecated": false,
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "401": {
+                        "description": "(Unauthorized) Invalid or missing Access Token"
+                    }
+                },
+                "tags": [
+                    "v1"
+                ]
+            },
+            "post": {
+                "summary": "",
+                "description": "",
+                "deprecated": false,
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "401": {
+                        "description": "(Unauthorized) Invalid or missing Access Token"
+                    }
+                },
+                "tags": [
+                    "v1"
+                ]
+            }
+        },
+        "/v1/apiusers/{apiuser}": {
+            "get": {
+                "summary": "",
+                "description": "",
+                "deprecated": false,
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "401": {
+                        "description": "(Unauthorized) Invalid or missing Access Token"
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "apiuser",
+                        "in": "path",
+                        "required": true,
+                        "description": "",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "tags": [
+                    "v1"
+                ]
+            },
+            "put": {
+                "summary": "",
+                "description": "",
+                "deprecated": false,
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "401": {
+                        "description": "(Unauthorized) Invalid or missing Access Token"
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "apiuser",
+                        "in": "path",
+                        "required": true,
+                        "description": "",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "tags": [
+                    "v1"
+                ]
+            },
+            "patch": {
+                "summary": "",
+                "description": "",
+                "deprecated": false,
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "401": {
+                        "description": "(Unauthorized) Invalid or missing Access Token"
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "apiuser",
+                        "in": "path",
+                        "required": true,
+                        "description": "",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "tags": [
+                    "v1"
+                ]
+            },
+            "delete": {
+                "summary": "",
+                "description": "",
+                "deprecated": false,
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "401": {
+                        "description": "(Unauthorized) Invalid or missing Access Token"
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "apiuser",
+                        "in": "path",
+                        "required": true,
+                        "description": "",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "tags": [
+                    "v1"
+                ]
+            }
+        }
+    },
+    "tags": [],
+    "components": {
+        "schemas": {
+            "ConnectedAccount": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "format": "int64",
+                        "description": "bigint",
+                        "nullable": false,
+                        "example": 1815577355
+                    },
+                    "user_id": {
+                        "type": "integer",
+                        "format": "int64",
+                        "description": "bigint",
+                        "nullable": false,
+                        "example": 1763774095
+                    },
+                    "provider": {
+                        "type": "string",
+                        "description": "string(255)",
+                        "nullable": false,
+                        "example": "string"
+                    },
+                    "provider_id": {
+                        "type": "string",
+                        "description": "string(255)",
+                        "nullable": false,
+                        "example": "string"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "string(255)",
+                        "nullable": true,
+                        "example": "string"
+                    },
+                    "nickname": {
+                        "type": "string",
+                        "description": "string(255)",
+                        "nullable": true,
+                        "example": "string"
+                    },
+                    "email": {
+                        "type": "string",
+                        "description": "string(255)",
+                        "nullable": true,
+                        "example": "string"
+                    },
+                    "telephone": {
+                        "type": "string",
+                        "description": "string(255)",
+                        "nullable": true,
+                        "example": "string"
+                    },
+                    "avatar_path": {
+                        "type": "string",
+                        "description": "text(65535)",
+                        "nullable": true,
+                        "example": "string"
+                    },
+                    "token": {
+                        "type": "string",
+                        "description": "string(1000)",
+                        "nullable": false,
+                        "example": "string"
+                    },
+                    "secret": {
+                        "type": "string",
+                        "description": "string(255)",
+                        "nullable": true,
+                        "example": "string"
+                    },
+                    "refresh_token": {
+                        "type": "string",
+                        "description": "string(1000)",
+                        "nullable": true,
+                        "example": "string"
+                    },
+                    "expires_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "datetime",
+                        "nullable": true,
+                        "example": "string"
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "datetime",
+                        "nullable": true,
+                        "example": "string"
+                    },
+                    "updated_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "datetime",
+                        "nullable": true,
+                        "example": "string"
+                    },
+                    "user": {
+                        "type": "object",
+                        "$ref": "#/components/schemas/User"
+                    }
+                },
+                "required": [
+                    "id",
+                    "user_id",
+                    "provider",
+                    "provider_id",
+                    "token"
+                ]
+            },
+            "User": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "format": "int64",
+                        "description": "bigint",
+                        "nullable": false,
+                        "example": 1511617350
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "string(255)",
+                        "nullable": false,
+                        "example": "string"
+                    },
+                    "email": {
+                        "type": "string",
+                        "description": "string(255)",
+                        "nullable": false,
+                        "example": "string"
+                    },
+                    "email_verified_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "datetime",
+                        "nullable": true,
+                        "example": "string"
+                    },
+                    "two_factor_confirmed_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "datetime",
+                        "nullable": true,
+                        "example": "string"
+                    },
+                    "current_team_id": {
+                        "type": "integer",
+                        "format": "int64",
+                        "description": "bigint",
+                        "nullable": true,
+                        "example": 1686543062
+                    },
+                    "profile_photo_path": {
+                        "type": "string",
+                        "description": "text(65535)",
+                        "nullable": true,
+                        "example": "string"
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "datetime",
+                        "nullable": true,
+                        "example": "string"
+                    },
+                    "updated_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "datetime",
+                        "nullable": true,
+                        "example": "string"
+                    },
+                    "fb_id": {
+                        "type": "string",
+                        "description": "string(255)",
+                        "nullable": true,
+                        "example": "string"
+                    },
+                    "connectedAccounts": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "$ref": "#/components/schemas/ConnectedAccount"
+                        }
+                    }
+                },
+                "required": [
+                    "id",
+                    "name",
+                    "email"
+                ]
+            }
+        },
+        "securitySchemes": {
+            "OAuth2": {
+                "type": "oauth2",
+                "flows": {
+                    "authorizationCode": {
+                        "authorizationUrl": "http://http://api-rest.test/oauth/authorize",
+                        "tokenUrl": "http://http://api-rest.test/oauth/token",
+                        "scopes": []
+                    }
+                }
+            },
+            "bearerAuth": {
+                "type": "http",
+                "scheme": "bearer",
+                "bearerFormat": "JWT"
+            }
+        }
+    }
+}
