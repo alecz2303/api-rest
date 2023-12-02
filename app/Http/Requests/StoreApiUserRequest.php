@@ -3,7 +3,6 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rules;
 
 class StoreApiUserRequest extends FormRequest
 {
@@ -25,7 +24,7 @@ class StoreApiUserRequest extends FormRequest
         return [
             //
             'name' => ['required'],
-            'email' => ['required','email'],
+            'email' => ['required'],
             'password' => ['required'],
         ];
     }
